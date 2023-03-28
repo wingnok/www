@@ -15,7 +15,7 @@ public enum EnemyState
 
 public class Enemycontroller : MonoBehaviour
 {
-
+    public float Attack1; 
 
     GameObject player;
 
@@ -123,10 +123,18 @@ public class Enemycontroller : MonoBehaviour
 
     void Attack()
     {
-        if(!coolDownAttack)
-           Gamecontroller.DamagePlayer(1);
-        StartCoroutine(CoolDown());
+        if (!coolDownAttack)
+        {
+            Gamecontroller.DamagePlayer(Attack1);
+            StartCoroutine(CoolDown());
+        }
+           
+
     }
+
+
+
+
 
     private IEnumerator CoolDown()
     {
